@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Number guessing game for users
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 RAN=$(( RANDOM % 1000+1 ))
 echo $RAN
@@ -44,5 +44,5 @@ else
     echo -e "Welcome back, $USERNAME! You have played $GET_GAMEPLAYED games, and your best game took $GET_GUESS guesses."
     (( GET_GAMEPLAYED=GET_GAMEPLAYED+1 ))
     GUESS_GAME
-    GUE_INSERT=$($PSQL "INSERT INTO guess(name, guess) VALUES('$USERNAME', $COUNT)")
+    GUE_INSERTING=$($PSQL "INSERT INTO guess(name, guess) VALUES('$USERNAME', $COUNT)")
 fi
