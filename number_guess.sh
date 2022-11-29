@@ -2,7 +2,7 @@
 # Number guessing game for users
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 RAN=$(( RANDOM % 1000+1 ))
-echo $RAN
+echo -e "$RAN"
 COUNT=1
 GUESS_GAME(){
   echo "Guess the secret number between 1 and 1000:"
