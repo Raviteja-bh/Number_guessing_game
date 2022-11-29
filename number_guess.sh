@@ -40,8 +40,8 @@ then
     INSERTING=$($PSQL "INSERT INTO userplayed(name, gamesplayed) VALUES('$USERNAME', 1)")
     GUE_INSERT=$($PSQL "INSERT INTO guess(name, guess) VALUES('$USERNAME', $COUNT)") 
 else
-    GET_GUESS=$($PSQL "SELECT MIN(guess) FROM guess WHERE name='$USERNAME'")
-    echo -e "Welcome back, $USERNAME! You have played $GET_GAMEPLAYED games, and your best game took $GET_GUESS guesses."
+    GET_GUESSING=$($PSQL "SELECT MIN(guess) FROM guess WHERE name='$USERNAME'")
+    echo -e "Welcome back, $USERNAME! You have played $GET_GAMEPLAYED games, and your best game took $GET_GUESSING guesses."
     (( GET_GAMEPLAYED=GET_GAMEPLAYED+1 ))
     GUESS_GAME
     GUE_INSERTING=$($PSQL "INSERT INTO guess(name, guess) VALUES('$USERNAME', $COUNT)")
